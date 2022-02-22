@@ -9,7 +9,7 @@ function check {
 
 #Building VirtualBox_VM
 function createvm {
-	source $Cellar/*/lib/create_vm.scpt
+	source $Cellar/*/lib/create_vm.sh
 }
 
 ################
