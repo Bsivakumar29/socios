@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+Cellar=$(brew --cellar socios)
+
+#Installation of VirtualBox
+function check {
+	source $Cellar/*/lib/install_virtualbox.scpt
+}
+
+#Building VirtualBox_VM
+function createvm {
+	source $Cellar/*/lib/create_vm.scpt
+}
+
+################
+
+for arg in "$@"; do
+  if [[ "$arg" = --check ]]; then
+	ARG_CHECK=true
+  fi
+  if [[ "$arg" = --build ]]; then
+    ARG_BUILD=true
+  fi
+done
+
+################
+
+if [[ "$ARG_CHECK" = true ]]; then
+  check
+fi
+
+if [[ "$ARG_BUILD" = true ]]; then
+  createvm
+fi
