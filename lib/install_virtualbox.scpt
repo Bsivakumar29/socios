@@ -1,4 +1,4 @@
-printf "Analyzing system application environment. Wait for a moment...\n" && sleep
+printf "Analyzing system application environment. Wait for a moment...\n" && sleep 2
 
 if osascript -e 'id of application "virtualbox" ' >/dev/null 2>&1; then
 	printf "%s\n" "VirtualBox is available. Nothing to do." && exit 1
