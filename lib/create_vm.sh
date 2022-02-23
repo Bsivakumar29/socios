@@ -1,7 +1,7 @@
 #!/bin/bash
 Server_name="socios_vm"
 Disk_location="/tmp/$Server_name.vdi"
-Image_file="/tmp/socios.iso"
+Image_file="/tmp/ubuntu.iso"
 
 #Creating virtual machine
 vboxmanage createvm --name $Server_name --ostype Ubuntu_64 --register
@@ -18,5 +18,5 @@ vboxmanage storagectl $Server_name --name "SATA Controller" --add sata --control
 vboxmanage storageattach $Server_name --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium $Disk_location
 
 #Configuration of ISO_image
-#vboxmanage storagectl $Server_name --name "IDE Controller" --add ide --controller PIIX4
-#vboxmanage storageattach $Server_name --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium $Image_file
+vboxmanage storagectl $Server_name --name "IDE Controller" --add ide --controller PIIX4
+vboxmanage storageattach $Server_name --storagectl "IDE Controller" --port 1 --device 0 --type dvddrive --medium $Image_file

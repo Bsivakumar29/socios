@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Cellar=$(brew --cellar socios)
+export Cellar=$(brew --cellar socios)
 
 #Installation of VirtualBox
 function check {
