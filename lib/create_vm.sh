@@ -1,7 +1,7 @@
 #!/bin/bash
 Server_name="socios_vm"
-Disk_location="/tmp/$Server_name.vdi"
-Image_file="/tmp/ubuntu.iso"
+Disk_location="/tmp/socios/$Server_name.vdi"
+Image_file="/tmp/socios/ubuntu.iso"
 
 #Creating virtual machine
 vboxmanage createvm --name $Server_name --ostype Ubuntu_64 --register
