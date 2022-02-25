@@ -26,6 +26,13 @@ function help {
 	echo "--version      Print the current version"	
 }
 
+#Version of Socios formula
+
+function version {
+	tag=$(brew info socios | awk '/stable/ {print $3}' | sed 's/^/v/')
+	echo "$tag"
+}
+
 ########################################
 #Socios options passing with Arguments #
 ########################################
@@ -39,6 +46,9 @@ for arg in "$@"; do
   fi
   if [[ "$arg" = --help ]]; then
 	help
+  fi
+  if [[ "$arg" = --version ]]; then
+	version
   fi
 done
 ########################################
