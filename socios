@@ -16,7 +16,7 @@ function createvm {
 #Display Help_Menu
 
 function help {
-	echo "Socios - experience Linux with you Mac."
+	echo "Socios - Linux with your Mac."
 	echo "Usage: socios [options...]"
 	echo
 	echo "Valid options are:"
